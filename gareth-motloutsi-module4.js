@@ -11,3 +11,15 @@ let attendees = [
     { name: "Karabo", age: 16, ticket: "VIP", hasTicket: true, checkedIn: false, spend: 900 },
     { name: "Michael", age: 28, ticket: "General", hasTicket: true, checkedIn: false, spend: 450 }
 ];
+
+
+console.log("\nChallenge 1: View the Queue");
+
+for (const attendee of attendees) {
+    console.log("========================");
+    console.log("Name:", attendee.name);
+    console.log("Age:", attendee.age);
+    console.log("Ticket:", attendee.ticket);
+    console.log("Valid Ticket:", attendee.hasTicket);
+}
+console.log("========================");
