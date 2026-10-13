@@ -221,3 +221,22 @@ for (const attendee of attendees) {
         }
     }
 }
+
+
+ // Challenge 11: Closing-Time Countdown
+console.log("\nChallenge 11: Closing-Time Countdown");
+
+// Count down the minutes until the festival closes
+for (let minutes = 10; minutes >= 1; minutes--) {
+    console.log("Festival closes in " + minutes + " minute" + (minutes === 1 ? "" : "s") + "...");
+
+    if (minutes === 5) {
+        console.log("WARNING: LAST ENTRY HAS ENDED");
+    }
+
+    if (minutes === 2) {
+        console.log("PLEASE PROCEED TO THE EXIT");
+    }
+}
+
+console.log("FESTIVAL CLOSED");
