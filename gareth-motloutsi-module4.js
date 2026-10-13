@@ -64,3 +64,20 @@ for (const attendee of attendees) {
             console.log("Wristband: UNKNOWN TICKET TYPE");
     }
 }
+
+
+ // Challenge 4: VIP Lounge Security
+console.log("\nChallenge 4: VIP Lounge Security");
+
+// Only valid adult VIP ticket holders can enter
+for (const attendee of attendees) {
+    if (
+        attendee.hasTicket === true &&
+        attendee.ticket === "VIP" &&
+        attendee.age >= 18
+    ) {
+        console.log(attendee.name + " -> VIP LOUNGE ACCESS APPROVED");
+    } else {
+        console.log(attendee.name + " -> VIP LOUNGE ACCESS DENIED");
+    }
+}
