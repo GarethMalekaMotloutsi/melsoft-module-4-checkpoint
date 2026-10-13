@@ -100,3 +100,17 @@ for (const attendee of attendees) {
     }
 }
 
+
+
+ // Challenge 6: Security Fast Lane
+console.log("\nChallenge 6: Security Fast Lane");
+
+// Skip anyone who does not have a valid ticket
+for (const attendee of attendees) {
+    if (attendee.hasTicket === false) {
+        continue;
+    }
+
+    console.log("Checking " + attendee.name + "...");
+}
+
