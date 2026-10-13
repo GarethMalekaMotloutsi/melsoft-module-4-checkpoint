@@ -114,3 +114,25 @@ for (const attendee of attendees) {
     console.log("Checking " + attendee.name + "...");
 }
 
+
+
+ // Challenge 7: Food Voucher Rewards
+console.log("\nChallenge 7: Food Voucher Rewards");
+
+// Give a voucher based on how much each person spent
+for (const attendee of attendees) {
+    let voucher;
+
+    if (attendee.spend >= 1000) {
+        voucher = "R200 food voucher";
+    } else if (attendee.spend >= 500) {
+        voucher = "R100 food voucher";
+    } else if (attendee.spend >= 300) {
+        voucher = "R50 food voucher";
+    } else {
+        voucher = "No voucher";
+    }
+
+    console.log(attendee.name + " -> " + voucher);
+}
+
