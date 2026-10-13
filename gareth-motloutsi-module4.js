@@ -81,3 +81,22 @@ for (const attendee of attendees) {
         console.log(attendee.name + " -> VIP LOUNGE ACCESS DENIED");
     }
 }
+
+
+ // Challenge 5: Find a Person in the Queue
+console.log("\nChallenge 5: Find a Person in the Queue");
+
+let searchName = "Zanele";
+
+// Stop searching when the person is found
+for (const attendee of attendees) {
+    if (attendee.name === searchName) {
+        console.log("ATTENDEE FOUND");
+        console.log("Name:", attendee.name);
+        console.log("Age:", attendee.age);
+        console.log("Ticket:", attendee.ticket);
+        console.log("Valid Ticket:", attendee.hasTicket);
+        break;
+    }
+}
+
