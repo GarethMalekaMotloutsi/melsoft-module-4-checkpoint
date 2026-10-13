@@ -240,3 +240,103 @@ for (let minutes = 10; minutes >= 1; minutes--) {
 }
 
 console.log("FESTIVAL CLOSED");
+
+
+
+ // Final Challenge: Festival Control Dashboard
+console.log("\nFinal Challenge: Festival Control Dashboard");
+
+let option = 2;
+
+console.log("==============================");
+console.log("       FESTIVAL CONTROL");
+console.log("==============================");
+console.log("1 - View Attendee Queue");
+console.log("2 - Process Entry");
+console.log("3 - View VIP Guests");
+console.log("4 - View Denied Attendees");
+console.log("5 - View Festival Statistics");
+console.log("6 - Find Biggest Spender");
+console.log("7 - Close Festival");
+
+// Run the selected menu option
+switch (option) {
+    case 1:
+        for (const attendee of attendees) {
+            console.log(attendee.name, "-", attendee.age, "-", attendee.ticket);
+        }
+        break;
+
+    case 2:
+        for (const attendee of attendees) {
+            if (attendee.age >= 18 && attendee.hasTicket === true) {
+                console.log(attendee.name + " -> ENTRY APPROVED");
+            } else {
+                console.log(attendee.name + " -> ENTRY DENIED");
+            }
+        }
+        break;
+
+    case 3:
+        for (const attendee of attendees) {
+            if (
+                attendee.ticket === "VIP" &&
+                attendee.hasTicket === true &&
+                attendee.age >= 18
+            ) {
+                console.log(attendee.name, "-> VIP GUEST");
+            }
+        }
+        break;
+
+    case 4:
+        for (const attendee of attendees) {
+            if (attendee.age < 18) {
+                console.log(attendee.name + " -> UNDER 18");
+            } else if (attendee.hasTicket === false) {
+                console.log(attendee.name + " -> NO VALID TICKET");
+            }
+        }
+        break;
+
+    case 5:
+        let dashboardValidTickets = 0;
+        let dashboardInvalidTickets = 0;
+        let dashboardTotalSpend = 0;
+
+        for (const attendee of attendees) {
+            if (attendee.hasTicket === true) {
+                dashboardValidTickets++;
+            } else {
+                dashboardInvalidTickets++;
+            }
+
+            dashboardTotalSpend += attendee.spend;
+        }
+
+        console.log("Total attendees:", attendees.length);
+        console.log("Valid tickets:", dashboardValidTickets);
+        console.log("Invalid tickets:", dashboardInvalidTickets);
+        console.log("Total spent: R" + dashboardTotalSpend.toFixed(2));
+        break;
+
+    case 6:
+        let dashboardBiggestSpender = attendees[0];
+
+        for (const attendee of attendees) {
+            if (attendee.spend > dashboardBiggestSpender.spend) {
+                dashboardBiggestSpender = attendee;
+            }
+        }
+
+        console.log("Biggest spender:", dashboardBiggestSpender.name);
+        console.log("Amount spent: R" + dashboardBiggestSpender.spend);
+        break;
+
+    case 7:
+        console.log("FESTIVAL CLOSED");
+        break;
+
+    default:
+        console.log("Invalid menu option");
+}
