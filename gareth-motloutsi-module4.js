@@ -179,3 +179,22 @@ console.log("General ticket holders:", generalCount);
 console.log("VIP ticket holders:", vipCount);
 console.log("Total spent: R" + totalSpend.toFixed(2));
 console.log("Average spend: R" + averageSpend.toFixed(2));
+
+
+
+ // Challenge 9: Find the Biggest Spender
+console.log("\nChallenge 9: Find the Biggest Spender");
+
+// Start with the first attendee and compare the others
+let biggestSpender = attendees[0];
+
+for (const attendee of attendees) {
+    if (attendee.spend > biggestSpender.spend) {
+        biggestSpender = attendee;
+    }
+}
+
+console.log("===== TOP CUSTOMER =====");
+console.log("Name:", biggestSpender.name);
+console.log("Amount Spent: R" + biggestSpender.spend);
+console.log("Reward: Backstage Upgrade");
