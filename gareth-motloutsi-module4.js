@@ -198,3 +198,26 @@ console.log("===== TOP CUSTOMER =====");
 console.log("Name:", biggestSpender.name);
 console.log("Amount Spent: R" + biggestSpender.spend);
 console.log("Reward: Backstage Upgrade");
+
+
+
+ // Challenge 10: Venue Capacity
+console.log("\nChallenge 10: Venue Capacity");
+
+let capacity = 5;
+let peopleInside = 0;
+
+// Only admit people who meet the entry rules
+for (const attendee of attendees) {
+    if (attendee.age >= 18 && attendee.hasTicket === true) {
+        peopleInside++;
+        console.log(attendee.name + " entered.");
+        console.log("People inside: " + peopleInside + " / " + capacity);
+
+        if (peopleInside === capacity) {
+            console.log("VENUE FULL");
+            console.log("STOP ADMITTING PEOPLE");
+            break;
+        }
+    }
+}
