@@ -44,27 +44,30 @@ for (const attendee of attendees) {
 }
 
 
+
 // Challenge 3: Access Zones
 console.log("\nChallenge 3: Access Zones");
 
-
-// Give each ticket type the correct wristband
+// Only give wristbands to people who can enter
 for (const attendee of attendees) {
     console.log("\nName:", attendee.name);
     console.log("Ticket:", attendee.ticket);
 
-    switch (attendee.ticket) {
-        case "VIP":
-            console.log("Wristband: GOLD");
-            break;
-        case "General":
-            console.log("Wristband: BLUE");
-            break;
-        default:
-            console.log("Wristband: UNKNOWN TICKET TYPE");
+    if (attendee.age >= 18 && attendee.hasTicket === true) {
+        switch (attendee.ticket) {
+            case "VIP":
+                console.log("Wristband: GOLD");
+                break;
+            case "General":
+                console.log("Wristband: BLUE");
+                break;
+            default:
+                console.log("Wristband: UNKNOWN TICKET TYPE");
+        }
+    } else {
+        console.log("Wristband: NOT ISSUED");
     }
 }
-
 
  // Challenge 4: VIP Lounge Security
 console.log("\nChallenge 4: VIP Lounge Security");
